@@ -75,28 +75,23 @@ The relative challenge lied in ensuring the consideration of correlation between
 
 The Cholesky decomposition decomposes a Hermitian, positive-definite matrix into the product of a lower triangular matrix and its conjugate transpose. The resulting lower triangular matrix $L$ satisfies:
 
-\[
-LL^\intercal = \Sigma
-\]
+$LL$^T = Σ
 
 and is composed of the following values:
 
-\[
-L
-=
-1 & 0 & 0 & 0 \\
-0.2 & 0.9798 & 0 & 0 \\
-0.6 & -0.3804 & 0.6714 & 0 \\
-0.4 & -0.8185 & 0.2980 & 0.8455 \\
-\]
+| 1     | 0       | 0      | 0       |
+|-------|---------|--------|---------|
+| 0.2   | 0.9798  | 0      | 0       |
+| 0.6   | -0.3804 | 0.6714 | 0       |
+| 0.4   | -0.8185 | 0.2980 | 0.8455  |
 
 We utilize the elements of this matrix to model the correlated Brownian Motions in the GBM processes as follows:
-- $\Tilde{B}_1 = B_1*l_{11}$
-- $\Tilde{B}_2 = B_1*l_{21} + B_2*l_{22}$
-- $\Tilde{B}_3 = B_1*l_{31} + B_2*l_{32} + B_3*l_{33}$
-- $\Tilde{B}_4 = B_1*l_{41} + B_2*l_{42} + B_3*l_{43} + B_4*l_{44}$
+- $B̃_1 = B_1 \cdot l_{11}$
+- $B̃_2 = B_1 \cdot l_{21} + B_2 \cdot l_{22}$
+- $B̃_3 = B_1 \cdot l_{31} + B_2 \cdot l_{32} + B_3 \cdot l_{33}$
+- $B̃_4 = B_1 \cdot l_{41} + B_2 \cdot l_{42} + B_3 \cdot l_{43} + B_4 \cdot l_{44}$
 
-Where $l_{kj}$ are elements of the $L$ matrix, and the $B_i$s, for $i = 1,2,3,4$, represent uncorrelated Brownian Motions.
+Where $l_{kj}$ are elements of the $L$ matrix, and the $B_i$ s, for $i = 1,2,3,4$, represent uncorrelated Brownian Motions.
 
 ## ETF Portfolio Allocation Strategy Results
 
