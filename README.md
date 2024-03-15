@@ -74,19 +74,20 @@ In our overtly simple example, the natural evolution of the stock abides by the 
 The relative challenge lied in ensuring the consideration of correlation between the assets, requiring the implementation to model correlated GBMs. To achieve this, theory suggests utilizing the Cholesky decomposition on the matrix $\Sigma$ and then utilizing the resulting values to model the four GBMs.
 
 The Cholesky decomposition decomposes a Hermitian, positive-definite matrix into the product of a lower triangular matrix and its conjugate transpose. The resulting lower triangular matrix $L$ satisfies:
+
 \[
 LL^\intercal = \Sigma
 \]
+
 and is composed of the following values:
+
 \[
 L
 =
-\begin{bmatrix}
 1 & 0 & 0 & 0 \\
 0.2 & 0.9798 & 0 & 0 \\
 0.6 & -0.3804 & 0.6714 & 0 \\
 0.4 & -0.8185 & 0.2980 & 0.8455 \\
-\end{bmatrix}
 \]
 
 We utilize the elements of this matrix to model the correlated Brownian Motions in the GBM processes as follows:
